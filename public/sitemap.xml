@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/upcoming/hoi-giao-arap-co-dai/</loc>
+    <loc>/upcoming/hoi-giao-arap-co-dai/</loc>
   </url><url>
-    <loc>//localhost:1313/products/anh-may-hoi-nuoc/</loc>
+    <loc>/products/anh-may-hoi-nuoc/</loc>
   </url><url>
-    <loc>//localhost:1313/products/ba-tu-safavid/</loc>
+    <loc>/products/ba-tu-safavid/</loc>
   </url><url>
-    <loc>//localhost:1313/products/</loc>
+    <loc>/products/</loc>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>/categories/</loc>
   </url><url>
-    <loc>//localhost:1313/products/phuc-hung/</loc>
+    <loc>/products/phuc-hung/</loc>
   </url><url>
-    <loc>//localhost:1313/privacy/</loc>
+    <loc>/privacy/</loc>
   </url><url>
-    <loc>//localhost:1313/products/dai-viet/</loc>
+    <loc>/products/dai-viet/</loc>
   </url><url>
-    <loc>//localhost:1313/products/ottoman/</loc>
+    <loc>/products/ottoman/</loc>
   </url><url>
-    <loc>//localhost:1313/terms/</loc>
+    <loc>/terms/</loc>
   </url><url>
-    <loc>//localhost:1313/cart/</loc>
+    <loc>/cart/</loc>
   </url><url>
-    <loc>//localhost:1313/products/dai-suy-thoai-my/</loc>
+    <loc>/products/dai-suy-thoai-my/</loc>
   </url><url>
-    <loc>//localhost:1313/upcoming/lien-xo/</loc>
+    <loc>/upcoming/lien-xo/</loc>
   </url><url>
-    <loc>//localhost:1313/upcoming/nhat-ban-thoi-edo/</loc>
+    <loc>/upcoming/nhat-ban-thoi-edo/</loc>
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>/tags/</loc>
   </url><url>
-    <loc>//localhost:1313/</loc>
+    <loc>/</loc>
   </url><url>
-    <loc>//localhost:1313/products/trung-hoa-phong-kien/</loc>
+    <loc>/products/trung-hoa-phong-kien/</loc>
   </url><url>
-    <loc>//localhost:1313/upcoming/</loc>
+    <loc>/upcoming/</loc>
   </url><url>
-    <loc>//localhost:1313/products/an-do-giao/</loc>
+    <loc>/products/an-do-giao/</loc>
   </url>
 </urlset>
