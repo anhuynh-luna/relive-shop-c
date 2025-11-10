@@ -1,0 +1,62 @@
+{{ define "main" }}
+
+<h1 class="text-3xl font-semibold mb-6">Sắp Ra Mắt</h1>
+
+<style>
+  .soon-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    background: #0f172a;
+    transition: 0.25s ease;
+  }
+  .soon-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 18px #22d3ee66;
+    border-color: #22d3ee;
+  }
+  .soon-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    opacity: 0.45;
+    transition: 0.3s;
+  }
+  .soon-card:hover img {
+    opacity: 0.65;
+  }
+  .soon-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    background: #22d3ee;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+</style>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+  {{ range .Pages }}
+  <a href="{{ .RelPermalink }}" class="block soon-card p-4">
+    
+    {{ with .Params.image }}
+    <img src="{{ . }}" alt="">
+    {{ end }}
+
+    <div class="soon-label">Coming Soon</div>
+
+    <h2 class="text-lg font-semibold mt-3">{{ .Title }}</h2>
+    <div class="text-sm text-slate-300 mt-1">{{ .Params.summary }}</div>
+
+  </a>
+  {{ end }}
+
+</div>
+
+{{ end }}

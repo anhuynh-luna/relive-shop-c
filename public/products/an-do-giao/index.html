@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Xã hội Ấn Độ giáo cổ đại · ReLive Experiences</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/favicon.ico" />
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <header class="border-b border-slate-800 sticky top-0 bg-slate-950/80 backdrop-blur z-10">
+    <div class="max-w-5xl mx-auto flex items-center justify-between p-4">
+      <a href="/" class="text-xl font-bold">ReLive</a>
+      <nav class="flex items-center gap-6">
+        
+          <a class="hover:text-cyan-300" href="/">Trang chủ</a>
+        
+          <a class="hover:text-cyan-300" href="/products/">Bối cảnh</a>
+        
+          <a class="hover:text-cyan-300" href="/upcoming/">Sắp ra mắt</a>
+        
+        <a href="/cart/" class="relative">
+          🛒
+          <span id="cart-count-badge"
+                class="absolute -top-2 -right-3 text-xs bg-cyan-500 text-black rounded-full px-2 py-0.5">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-4">
+    
+
+<style>
+ 
+.class-card {
+  padding: 12px;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  background: #0f172a;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.class-card:hover {
+  border-color: #22d3ee;
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px #22d3ee55;
+}
+.class-card.selected {
+  border-color: #22d3ee;
+  background: #1e293b;
+  box-shadow: 0 0 18px #22d3eeaa;
+}
+.class-thumb {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+ 
+#class-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+ 
+#class-popup-content {
+  background: #0f172a;
+  border: 1px solid #22d3ee;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 760px;
+  width: 90%;
+  display: flex;
+  gap: 24px;
+}
+
+ 
+#class-popup-content img {
+  width: 230px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+ 
+#popup-close {
+  margin-top: 16px;
+  background: #22d3ee;
+  color: black;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+</style>
+
+<article class="space-y-6">
+  <h1 class="text-3xl font-semibold">Xã hội Ấn Độ giáo cổ đại</h1>
+
+  <div class="grid md:grid-cols-2 gap-6">
+      <div>
+          
+          <img src="/images/an-do.jpeg" class="rounded-lg border border-slate-800"/>
+          
+      </div>
+
+      <div class="space-y-4">
+          <div class="text-slate-300 text-sm">Trải nghiệm xã hội phân tầng đẳng cấp và đời sống tâm linh.</div>
+
+          
+          <div id="price-display" class="text-xl font-mono text-cyan-400">
+            Hãy chọn lớp nhân vật để xem giá
+          </div>
+
+          
+          <div class="text-sm text-slate-300">Chọn lớp nhân vật:</div>
+          <div id="class-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+
+          <button id="btn-add" class="bg-cyan-500 text-black px-4 py-2 rounded hover:bg-cyan-400">
+              + Thêm vào giỏ
+          </button>
+
+          <a href="/cart/" class="block text-sm underline">Xem giỏ hàng →</a>
+      </div>
+  </div>
+
+  <div class="prose prose-invert max-w-none"><p>Trong một xã hội nơi đẳng cấp không chỉ là địa vị mà còn là bản chất thiêng liêng, con người sinh ra đã mang theo vai trò được định bởi thần linh. Tu sĩ Brahmin bảo tồn kinh Veda, dẫn dắt nghi thức và giữ quyền tiếp xúc với cái thiêng. Chiến binh Kshatriya gánh trên vai danh dự, trật tự và sự an toàn của cộng đồng. Thương nhân Vaishya điều hòa của cải, mùa màng và trao đổi hàng hoá. Trong khi đó, những người thuộc tầng lớp Shudra âm thầm lao động, xây dựng nền tảng cho tất cả mà không bao giờ được chạm vào quyền lực hay tri thức cao hơn.</p>
+<p>Mọi người đều biết vị trí của mình.
+Mọi người đều biết điều mình không được phép chạm đến.</p>
+<p>Nhưng bên dưới vẻ yên ổn và trật tự là những giằng xé âm thầm:
+Một chiến binh có thể khao khát tri thức không?
+Một người lao động có thể vươn lên hơn địa vị bẩm sinh?
+Một tu sĩ có thể nghi ngờ chính đức tin mình bảo vệ?</p>
+<p>Nếu số phận được sắp đặt từ khi sinh ra, vậy <strong>tự do</strong> nằm ở đâu?
+Và nếu bạn tìm thấy cánh cửa để bước ra khỏi định mệnh… <strong>bạn có đủ can đảm để mở nó không?</strong></p>
+</div>
+</article>
+
+
+<div id="class-popup">
+  <div id="class-popup-content">
+    <img id="popup-img" src="" alt="">
+
+    <div>
+      <h2 id="popup-name" class="text-xl font-semibold"></h2>
+      <p id="popup-description" class="text-slate-300 mt-2"></p>
+
+      <div class="mt-3">
+        <h3 class="font-semibold text-cyan-300">Kỹ năng nổi bật:</h3>
+        <ul id="popup-skills" class="list-disc ml-5 text-slate-300"></ul>
+      </div>
+
+      <button id="popup-close">Đóng</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const CLASSES = [{"description":"Giữ kinh Veda, hành thiền, thực hiện nghi lễ và bảo toàn tri thức tâm linh.","image":"/images/classes/tu-si.jpeg","name":"Tu sĩ (Brahmin)","price":800000,"skills":["Thiền định","Trì giới","Tụng niệm","Triết học tôn giáo"]},{"description":"Lãnh đạo quân đội, bảo vệ xã hội và duy trì trật tự.","image":"/images/classes/chien-binh.jpeg","name":"Chiến binh (Kshatriya)","price":750000,"skills":["Chỉ huy","Ngoại giao","Tổ chức quyền lực"]},{"description":"Tạo của cải vật chất và duy trì kinh tế cộng đồng.","image":"/images/classes/thuong-nhan-an-do.jpeg","name":"Thương nhân (Vaishya)","price":700000,"skills":["Giao thương","Quản lý tài sản","Nông nghiệp"]},{"description":"Lao động chân tay, chịu ảnh hưởng sâu sắc của bất bình đẳng xã hội.","image":"/images/classes/lao-dong-phuc-dich.jpeg","name":"Lao động phục dịch (Shudra)","price":500000,"skills":["Thích nghi","Sức bền","Lao động đa năng"]}];
+const priceDisplay = document.getElementById("price-display");
+const classList = document.getElementById("class-list");
+let selected = null;
+
+
+function openPopup(cls){
+  document.getElementById("popup-img").src = cls.image || "";
+  document.getElementById("popup-name").textContent = cls.name;
+  document.getElementById("popup-description").textContent = cls.description || "";
+
+  const skillList = document.getElementById("popup-skills");
+  skillList.innerHTML = "";
+  (cls.skills || []).forEach(s => {
+      const li = document.createElement("li");
+      li.textContent = s;
+      skillList.appendChild(li);
+  });
+
+  document.getElementById("class-popup").style.display = "flex";
+}
+
+document.getElementById("popup-close").onclick = () =>
+  document.getElementById("class-popup").style.display = "none";
+
+
+function renderClasses(){
+  classList.innerHTML = "";
+  CLASSES.forEach(cls => {
+    const card = document.createElement("div");
+    card.className = "class-card";
+    card.innerHTML = `
+      <img src="${cls.image}" class="class-thumb">
+      <div class="text-lg font-semibold">${cls.name}</div>
+      <div class="text-sm text-slate-400">${cls.description || ""}</div>
+      <div class="text-sm font-mono text-cyan-400 mt-1">${Number(cls.price||0).toLocaleString("vi-VN")}đ</div>
+    `;
+
+    card.onclick = () => {
+      selected = cls;
+      priceDisplay.textContent = Number(cls.price||0).toLocaleString("vi-VN") + "đ";
+      document.querySelectorAll(".class-card").forEach(c => c.classList.remove("selected"));
+      card.classList.add("selected");
+      openPopup(cls);
+    };
+
+    classList.appendChild(card);
+  });
+}
+
+document.getElementById("btn-add").onclick = () => {
+  if(!selected){
+    alert("Hãy chọn lớp nhân vật trước khi thêm vào giỏ!");
+    return;
+  }
+
+  addToCart({
+    sku: 'an-do-giao',
+    name: 'Xã hội Ấn Độ giáo cổ đại',
+    price: Number(selected.price || 0),
+    image: '\/images\/an-do.jpeg',
+    options: { "Lớp nhân vật": selected.name }
+  });
+};
+
+renderClasses();
+</script>
+
+
+  </main>
+
+  
+  <footer class="mt-10 border-t border-slate-700 pt-8 pb-6 text-sm text-slate-400">
+    <div class="max-w-5xl mx-auto px4">
+      
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div>
+        <h3 class="font-semibold text-white mb-2">Liên hệ với chúng tôi</h3>
+
+        <a href="mailto:support@relive.com" class="flex items-center gap-2 hover:text-cyan-400">
+      
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 5.5h16.5v13H3.75v-13Zm16.5 0-8.25 6.5L3.75 5.5"/>
+          </svg>
+          support@relive.com
+        </a>
+
+        <a href="https://facebook.com/reliveproject" target="_blank" class="flex items-center gap-2 hover:text-cyan-400 mt-2">
+      
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13 3h4V0h-4c-3.3 0-6 2.7-6 6v3H4v4h3v11h4V13h3l1-4h-4V6c0-.6.4-1 1-1Z"/>
+          </svg>
+          https://www.facebook.com/reliveproject
+        </a>
+
+        <a href="https://zalo.me/relive" target="_blank" class="flex items-center gap-2 hover:text-cyan-400 mt-2">
+      
+          <div class="w-5 h-5 font-bold border border-slate-400 rounded flex items-center justify-center text-xs">
+            Z
+          </div>
+          https://zalo.me/relive
+        </a>
+
+        <a href="tel:0369333999" class="flex items-center gap-2 hover:text-cyan-400 mt-2">
+      
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" 
+              d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 0 0 2.25-2.25v-2.317a1.5 1.5 0 0 0-.97-1.415l-3.03-1.21a1.5 1.5 0 0 0-1.754.54l-.75 1.003a1.5 1.5 0 0 1-1.7.51 11.25 11.25 0 0 1-6.309-6.309 1.5 1.5 0 0 1 .51-1.7l1.003-.75a1.5 1.5 0 0 0 .54-1.754l-1.21-3.03A1.5 1.5 0 0 0 8.817 3H6.5A2.25 2.25 0 0 0 4.25 5.25v1.5Z" />
+          </svg>
+          0369 333 999
+        </a>
+
+
+    </div>
+
+
+    <div>
+      <h3 class="font-semibold text-white">Địa chỉ</h3>
+      <p>Cơ sở 1: 227 đường Nguyễn Văn Cừ, Phường Chợ Quán, Thành phố Hồ Chí Minh</p>
+      <p>Cơ sở 2: Khu đô thị Đại học Quốc gia Thành phố Hồ Chí Minh, Phường Đông Hoà, Thành phố Hồ Chí Minh</p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-white">Chính sách & Điều khoản</h3>
+      <a href="/privacy/" class="underline block hover:text-cyan-400">Chính sách bảo mật</a>
+      <a href="/terms/" class="underline block hover:text-cyan-400">Điều khoản sử dụng</a>
+    </div>
+
+    </div>
+
+    <p class="text-center text-slate-500 mt-6 text-xs">
+    © 2025 ReLive Experiences. You live the history.
+    </p>
+  </footer>
+
+  
+  <script src="/js/cart.js"></script>
+
+
+<div id="chatbot-toggle"
+     class="fixed bottom-6 right-6 bg-cyan-500 hover:bg-cyan-400 text-black px-4 py-3 rounded-full shadow-lg cursor-pointer transition">
+  💬 Hỗ trợ
+</div>
+
+
+<div id="chatbot-window"
+     class="hidden fixed bottom-20 right-6 w-80 bg-slate-900 border border-slate-700 rounded-xl shadow-2xl flex flex-col">
+
+  
+  <div class="p-3 border-b border-slate-700 flex items-center gap-2">
+    <img src="/images/support-avatar.png" class="w-8 h-8 rounded-full">
+    <div>
+      <div class="text-sm font-semibold text-cyan-300">Relive Support</div>
+      <div class="text-xs text-slate-400">Online</div>
+    </div>
+    <button id="chatbot-close" class="ml-auto text-slate-400 hover:text-white">&times;</button>
+  </div>
+
+  
+  <div id="chat-area" class="p-3 space-y-3 overflow-y-auto" style="max-height: 280px;">
+  </div>
+
+  
+  <div id="chat-quick" class="p-2 border-t border-slate-700 space-y-1"></div>
+
+</div>
+
+<script>
+const QUESTIONS = [
+  {
+    q: "Trải nghiệm có tạo cảm giác như đang thật sự sống trong bối cảnh lịch sử không?",
+    a: "Môi trường được tái hiện với chiều sâu về hình ảnh, âm thanh và nhịp sống. Người dùng thường cảm nhận như mình đang thực sự hiện diện tại thời điểm ấy, nhưng vẫn luôn giữ được sự an toàn và tỉnh táo trong thực tế."
+  },
+  {
+    q: "Cảm xúc cá nhân có bị ảnh hưởng mạnh trong quá trình trải nghiệm không?",
+    a: "Người dùng có thể cảm nhận nhiều cung bậc cảm xúc khác nhau, giống như khi xem một thước phim có chiều sâu. Tuy nhiên, trải nghiệm được thiết kế để đảm bảo sự cân bằng và thoải mái, tránh gây căng thẳng hoặc quá tải giác quan."
+  },
+  {
+    q: "Nếu tôi không quen với công nghệ hoặc chưa từng thử loại hình này, có gặp khó khăn không?",
+    a: "Trải nghiệm được tối ưu hóa để dễ tiếp cận. Hệ thống có hướng dẫn từng bước rõ ràng, người dùng chỉ cần làm theo gợi ý và không cần kiến thức công nghệ trước đó."
+  },
+  {
+    q: "Thời lượng trải nghiệm kéo dài bao lâu?",
+    a: "Thời lượng được thiết kế vừa phải, đủ để hòa nhập với bối cảnh và cảm nhận trọn vẹn nội dung mà không gây mệt mỏi. Điều này giúp giữ cảm giác tự nhiên và dễ chịu."
+  },
+  {
+    q: "Sau khi kết thúc trải nghiệm, cảm giác thường lưu lại như thế nào?",
+    a: "Nhiều người dùng cho biết họ cảm thấy thư thái, có chiều sâu suy ngẫm hơn về câu chuyện và bối cảnh đã trải qua. Một số mô tả cảm giác như vừa kết thúc một chuyến đi ngắn nhưng có ý nghĩa."
+  }
+];
+
+
+
+const chatWindow = document.getElementById("chatbot-window");
+const toggleBtn = document.getElementById("chatbot-toggle");
+const closeBtn = document.getElementById("chatbot-close");
+const chatArea = document.getElementById("chat-area");
+const quickList = document.getElementById("chat-quick");
+
+
+toggleBtn.onclick = () => {
+  chatWindow.classList.toggle("hidden");
+  renderQuickQuestions();
+};
+
+
+closeBtn.onclick = () => chatWindow.classList.add("hidden");
+
+
+function addMessage(text, sender="bot"){
+  const msg = document.createElement("div");
+  msg.className = sender === "bot"
+    ? "flex items-start gap-2"
+    : "flex items-start gap-2 justify-end";
+  msg.innerHTML = sender === "bot"
+    ? `<img src="/images/support-avatar.png" class="w-8 h-8 rounded-full"><div class="bg-slate-800 p-2 rounded-lg text-sm max-w-[200px]">${text}</div>`
+    : `<div class="bg-cyan-500 text-black p-2 rounded-lg text-sm max-w-[200px]">${text}</div>`;
+
+  chatArea.appendChild(msg);
+  chatArea.scrollTop = chatArea.scrollHeight;
+}
+
+
+function renderQuickQuestions(){
+  quickList.innerHTML = "";
+  QUESTIONS.forEach(item => {
+    const btn = document.createElement("button");
+    btn.className = "w-full text-left bg-slate-800 hover:bg-slate-700 p-2 rounded text-sm";
+    btn.textContent = item.q;
+    btn.onclick = () => {
+      addMessage(item.q, "user");
+      setTimeout(() => addMessage(item.a, "bot"), 400);
+    };
+    quickList.appendChild(btn);
+  });
+}
+
+
+setTimeout(() => {
+  addMessage("Xin chào 👋 Bạn cần mình hỗ trợ gì không?");
+}, 800);
+</script>
+
+
+</body>
+</html>

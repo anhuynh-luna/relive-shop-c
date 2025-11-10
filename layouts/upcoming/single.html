@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<article class="space-y-6">
+  <h1 class="text-3xl font-semibold">{{ .Title }}</h1>
+
+  {{ with .Params.image }}
+  <img src="{{ . }}" class="rounded-xl border border-slate-800 mb-4"/>
+  {{ end }}
+
+  <div class="prose prose-invert max-w-none">{{ .Content }}</div>
+
+  <div class="mt-6 p-4 border border-slate-700 rounded text-slate-400 italic">
+    Bối cảnh này hiện **đang phát triển**, chưa thể trải nghiệm nhập vai.  
+    Hãy quay lại sau nhé 💗
+  </div>
+</article>
+
+{{ end }}

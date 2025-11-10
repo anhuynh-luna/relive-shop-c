@@ -1,0 +1,24 @@
+baseURL = "/"
+languageCode = "vi"
+title = "ReLive Experiences"
+enableRobotsTXT = true
+
+[params]
+brand = "ReLive"
+tagline = "We sell emotions. You live the history."
+
+[menu]
+  [[menu.main]]
+    name = "Trang chủ"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Bối cảnh"
+    url = "/products/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Sắp ra mắt"
+    url = "/upcoming/"
+    weight = 4

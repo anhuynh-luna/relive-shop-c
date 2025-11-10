@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+<h1 class="text-3xl font-semibold mb-6">Chọn Bối Cảnh Trải Nghiệm</h1>
+
+<!-- Ô tìm kiếm -->
+<input 
+  id="searchBox"
+  type="text"
+  placeholder="Tìm bối cảnh..."
+  class="w-full max-w-md px-3 py-2 rounded bg-slate-800 border border-slate-600 mb-6 text-slate-200 focus:outline-none focus:border-cyan-400"
+/>
+
+<!-- Danh sách bối cảnh -->
+<div id="productList" class="grid md:grid-cols-3 gap-6">
+  {{ range .Pages }}
+  <div class="product-card border border-slate-800 rounded-xl p-4 transition hover:border-cyan-400" data-title="{{ .Title | lower }}">
+    <a href="{{ .RelPermalink }}" class="block">
+      {{ with .Params.image }}
+      <img src="{{ . }}" class="rounded-lg mb-3 border border-slate-800 w-full h-48 object-cover" />
+      {{ end }}
+      <h2 class="text-lg font-semibold mb-1">{{ .Title }}</h2>
+      <div class="text-sm text-slate-300 mb-2">{{ .Params.summary }}</div>
+      <div class="text-sm font-mono text-cyan-400">Xem chi tiết →</div>
+    </a>
+  </div>
+  {{ end }}
+</div>
+
+<!-- Thông báo khi không có kết quả -->
+<div id="noResults" class="text-center text-slate-400 mt-6 hidden">
+  Không tìm thấy bối cảnh phù hợp. Chúng tôi sẽ cập nhật thêm trong tương lai 💗
+</div>
+
+<!-- Script lọc bối cảnh -->
+<script>
+  const searchBox = document.getElementById("searchBox");
+  const cards = document.querySelectorAll(".product-card");
+  const noResults = document.getElementById("noResults");
+
+  searchBox.addEventListener("input", () => {
+    const query = searchBox.value.toLowerCase();
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const name = card.dataset.title;
+      if (name.includes(query)) {
+        card.style.display = "block";
+        visibleCount++;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    noResults.classList.toggle("hidden", visibleCount > 0);
+  });
+</script>
+
+{{ end }}

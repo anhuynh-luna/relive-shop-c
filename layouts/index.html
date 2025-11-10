@@ -1,0 +1,110 @@
+{{ define "main" }}
+
+<section class="max-w-4xl mx-auto mt-10 mb-16 px-4 text-slate-200 leading-relaxed">
+  <h2 class="text-3xl font-semibold mb-6">Bối cảnh</h2>
+
+  <p class="mb-4">
+    Thời điểm hiện tại là những năm <strong>2xxx</strong>. Công nghệ trí tuệ nhân tạo đã phát triển đến mức vượt xa mọi thời kỳ lịch sử trước đó. Xã hội vận hành ổn định nhờ hệ thống AI đảm nhiệm gần như toàn bộ các công việc quản lý, điều phối và tối ưu nguồn lực.
+  </p>
+
+  <ul class="list-disc ml-6 space-y-2 mb-4">
+    <li>Quyền lực chính trị, kinh tế và xã hội được định hướng bởi các mô hình trí tuệ nhân tạo.</li>
+    <li>Lao động thủ công và sản xuất vật chất phần lớn do máy móc và robot đảm nhiệm.</li>
+    <li>Chuẩn mực đạo đức và luật pháp được lập trình nhằm đảm bảo công bằng cho tất cả.</li>
+  </ul>
+
+  <p class="mb-4">
+    Một xã hội tưởng như hoàn hảo. Nhưng sự hoàn hảo ấy lại kéo theo những hệ quả sâu sắc:
+  </p>
+
+  <ul class="list-disc ml-6 space-y-2 mb-6">
+    <li>
+      Con người dần tách khỏi môi trường tự nhiên nguyên bản, sống trong các siêu đô thị khép kín và vô trùng.
+    </li>
+    <li>
+      Khả năng tư duy độc lập và kinh nghiệm thực tế suy giảm khi mọi quyết định đều có thể nhờ AI lựa chọn tối ưu.
+    </li>
+  </ul>
+
+  <p class="mb-4">
+    Nói cách khác, xã hội hiện tại vận hành rất tốt — nhưng con người lại dần đánh mất <strong>“bản thể của chính mình”</strong>.
+  </p>
+
+  <p class="mb-6">
+    Để khôi phục trải nghiệm sống chân thực, dự án <strong>ReLive</strong> đã ra đời — một hệ thống cho phép bạn <em>sống lại</em> một cuộc đời trong quá khứ, lựa chọn bối cảnh, vị trí xã hội, và tự tay đưa ra quyết định của chính mình.
+  </p>
+
+  <p class="text-cyan-400 font-semibold">
+    Không chỉ quan sát lịch sử. Bạn trở thành lịch sử.
+  </p>
+
+
+
+  <!-- SLIDER -->
+  <div class="relative w-full max-w-5xl mx-auto rounded-xl overflow-hidden border border-slate-700">
+
+    <div id="hero-slider" class="relative h-[460px]">
+
+      <!-- Slide 1 -->
+      <div class="slide absolute inset-0 opacity-100 transition-opacity duration-700">
+        <img src="/images/an-do.jpeg" class="w-full h-full object-cover">
+        <div class="absolute bottom-0 w-full text-center bg-black/40 py-3 text-lg font-semibold text-white">
+          Xã hội Ấn Độ giáo cổ đại
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide absolute inset-0 opacity-0 transition-opacity duration-700">
+        <img src="/images/chau-au-phuc-hung.jpeg" class="w-full h-full object-cover">
+        <div class="absolute bottom-0 w-full text-center bg-black/40 py-3 text-lg font-semibold text-white">
+          Châu Âu thời Phục hưng
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide absolute inset-0 opacity-0 transition-opacity duration-700">
+        <img src="/images/hoa-ky-1929.jpeg" class="w-full h-full object-cover">
+        <div class="absolute bottom-0 w-full text-center bg-black/40 py-3 text-lg font-semibold text-white">
+          Hoa Kỳ thời Đại suy thoái 1929
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="slide absolute inset-0 opacity-0 transition-opacity duration-700">
+        <img src="/images/trung-hoa-phong-kien.jpeg" class="w-full h-full object-cover">
+        <div class="absolute bottom-0 w-full text-center bg-black/40 py-3 text-lg font-semibold text-white">
+          Trung Hoa thời kỳ phong kiến
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Nút chọn bối cảnh -->
+  <div class="text-center">
+    <a href="/products/"
+       class="inline-block bg-cyan-500 text-black font-semibold px-8 py-3 rounded-lg hover:bg-cyan-400 transition">
+      Bắt đầu chọn bối cảnh →
+    </a>
+  </div>
+
+</section>
+
+<!-- SCRIPT SLIDER -->
+<script>
+let index = 0;
+const slides = document.querySelectorAll("#hero-slider .slide");
+
+function showSlide(i){
+  slides.forEach((s, n)=> s.style.opacity = n === i ? "1" : "0");
+}
+
+showSlide(0);
+setInterval(()=>{
+  index = (index + 1) % slides.length;
+  showSlide(index);
+}, 3500);
+</script>
+
+{{ end }}
