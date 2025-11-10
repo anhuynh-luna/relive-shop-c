@@ -6,21 +6,21 @@
   <title>Ba Tư thời Safavid · ReLive Experiences</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" href="../../favicon.ico" />
 </head>
 <body class="bg-slate-950 text-slate-100">
   <header class="border-b border-slate-800 sticky top-0 bg-slate-950/80 backdrop-blur z-10">
     <div class="max-w-5xl mx-auto flex items-center justify-between p-4">
-      <a href="/" class="text-xl font-bold">ReLive</a>
+      <a href="../../" class="text-xl font-bold">ReLive</a>
       <nav class="flex items-center gap-6">
         
-          <a class="hover:text-cyan-300" href="/">Trang chủ</a>
+          <a class="hover:text-cyan-300" href="../../">Trang chủ</a>
         
-          <a class="hover:text-cyan-300" href="/products/">Bối cảnh</a>
+          <a class="hover:text-cyan-300" href="../../products/">Bối cảnh</a>
         
-          <a class="hover:text-cyan-300" href="/upcoming/">Sắp ra mắt</a>
+          <a class="hover:text-cyan-300" href="../../upcoming/">Sắp ra mắt</a>
         
-        <a href="/cart/" class="relative">
+        <a href="../../cart/" class="relative">
           🛒
           <span id="cart-count-badge"
                 class="absolute -top-2 -right-3 text-xs bg-cyan-500 text-black rounded-full px-2 py-0.5">0</span>
@@ -105,7 +105,7 @@
   <div class="grid md:grid-cols-2 gap-6">
       <div>
           
-          <img src="/images/ba-tu-safavid.jpeg" class="rounded-lg border border-slate-800"/>
+          <img src="../../images/ba-tu-safavid.jpeg" class="rounded-lg border border-slate-800"/>
           
       </div>
 
@@ -125,7 +125,7 @@
               + Thêm vào giỏ
           </button>
 
-          <a href="/cart/" class="block text-sm underline">Xem giỏ hàng →</a>
+          <a href="../../cart/" class="block text-sm underline">Xem giỏ hàng →</a>
       </div>
   </div>
 
@@ -285,8 +285,8 @@ renderClasses();
 
     <div>
       <h3 class="font-semibold text-white">Chính sách & Điều khoản</h3>
-      <a href="/privacy/" class="underline block hover:text-cyan-400">Chính sách bảo mật</a>
-      <a href="/terms/" class="underline block hover:text-cyan-400">Điều khoản sử dụng</a>
+      <a href="../../privacy/" class="underline block hover:text-cyan-400">Chính sách bảo mật</a>
+      <a href="../../terms/" class="underline block hover:text-cyan-400">Điều khoản sử dụng</a>
     </div>
 
     </div>
@@ -297,7 +297,7 @@ renderClasses();
   </footer>
 
   
-  <script src="/js/cart.js"></script>
+  <script src="../../js/cart.js"></script>
 
 
 <div id="chatbot-toggle"
@@ -311,7 +311,7 @@ renderClasses();
 
   
   <div class="p-3 border-b border-slate-700 flex items-center gap-2">
-    <img src="/images/support-avatar.png" class="w-8 h-8 rounded-full">
+    <img src="../../images/support-avatar.png" class="w-8 h-8 rounded-full">
     <div>
       <div class="text-sm font-semibold text-cyan-300">Relive Support</div>
       <div class="text-xs text-slate-400">Online</div>
@@ -376,7 +376,7 @@ function addMessage(text, sender="bot"){
     ? "flex items-start gap-2"
     : "flex items-start gap-2 justify-end";
   msg.innerHTML = sender === "bot"
-    ? `<img src="/images/support-avatar.png" class="w-8 h-8 rounded-full"><div class="bg-slate-800 p-2 rounded-lg text-sm max-w-[200px]">${text}</div>`
+    ? `<img src="../../images/support-avatar.png" class="w-8 h-8 rounded-full"><div class="bg-slate-800 p-2 rounded-lg text-sm max-w-[200px]">${text}</div>`
     : `<div class="bg-cyan-500 text-black p-2 rounded-lg text-sm max-w-[200px]">${text}</div>`;
 
   chatArea.appendChild(msg);
