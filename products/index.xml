@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bối cảnh on ReLive Experiences</title>
+    <link>/products/</link>
+    <description>Recent content in Bối cảnh on ReLive Experiences</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <atom:link href="/products/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anh thời kỳ Máy Hơi Nước</title>
+      <link>/products/anh-may-hoi-nuoc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/products/anh-may-hoi-nuoc/</guid>
+      <description>Thời kỳ chuyển mình mạnh mẽ từ nông nghiệp sang công nghiệp, máy móc thay đổi đời sống con người.</description>
+    </item>
+    <item>
+      <title>Ba Tư thời Safavid</title>
+      <link>/products/ba-tu-safavid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/products/ba-tu-safavid/</guid>
+      <description>Thời kỳ thịnh vượng nghệ thuật, kiến trúc và thương mại tơ lụa.</description>
+    </item>
+    <item>
+      <title>Châu Âu thời Phục Hưng</title>
+      <link>/products/phuc-hung/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/products/phuc-hung/</guid>
+      <description>Thời đại bùng nổ nghệ thuật, khoa học và tư tưởng nhân văn.</description>
+    </item>
+    <item>
+      <title>Đại Việt hưng thịnh</title>
+      <link>/products/dai-viet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/products/dai-viet/</guid>
+      <description>Một xã hội dựa trên đạo lý, pháp luật và truyền thống, với giáo dục Nho học phát triển mạnh.</description>
+    </item>
+    <item>
+      <title>Đế quốc Ottoman thời kỳ hoàng kim</title>
+      <link>/products/ottoman/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/products/ottoman/</guid>
+      <description>Đế quốc đa sắc tộc, đa tôn giáo với sức mạnh quân sự và văn hóa rực rỡ.</description>
+    </item>
+    <item>
+      <title>Hoa Kỳ thời Đại Suy Thoái 1929</title>
+      <link>/products/dai-suy-thoai-my/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/products/dai-suy-thoai-my/</guid>
+      <description>Hoa Kỳ rơi vào Đại Suy Thoái: nơi mỗi người buộc phải chọn sống sót, thay đổi, hay sa vào bóng tối.</description>
+    </item>
+    <item>
+      <title>Trung Hoa Phong Kiến</title>
+      <link>/products/trung-hoa-phong-kien/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/products/trung-hoa-phong-kien/</guid>
+      <description>Hệ thống xã hội chịu ảnh hưởng sâu sắc của Nho giáo và trật tự thiên mệnh.</description>
+    </item>
+    <item>
+      <title>Xã hội Ấn Độ giáo cổ đại</title>
+      <link>/products/an-do-giao/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/products/an-do-giao/</guid>
+      <description>Trải nghiệm xã hội phân tầng đẳng cấp và đời sống tâm linh.</description>
+    </item>
+  </channel>
+</rss>

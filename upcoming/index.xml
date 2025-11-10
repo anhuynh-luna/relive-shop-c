@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Upcomings on ReLive Experiences</title>
+    <link>/upcoming/</link>
+    <description>Recent content in Upcomings on ReLive Experiences</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <atom:link href="/upcoming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ả Rập và Sự Hình Thành Hồi Giáo (Thế kỷ VI–VII)</title>
+      <link>/upcoming/hoi-giao-arap-co-dai/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/upcoming/hoi-giao-arap-co-dai/</guid>
+      <description>Thời điểm những bộ lạc rời rạc bước vào kỷ nguyên của một cộng đồng thống nhất dựa trên niềm tin.</description>
+    </item>
+    <item>
+      <title>Liên Xô Thời Hưng Thịnh - Xã hội Chủ nghĩa và giấc mơ công bằng</title>
+      <link>/upcoming/lien-xo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/upcoming/lien-xo/</guid>
+      <description>Thời đại của lý tưởng cộng đồng, sức mạnh công nghiệp và niềm tin vào tương lai chung.</description>
+    </item>
+    <item>
+      <title>Nhật Bản thời Edo (1603–1868)</title>
+      <link>/upcoming/nhat-ban-thoi-edo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/upcoming/nhat-ban-thoi-edo/</guid>
+      <description>Thời đại trị vì thanh bình nhưng chứa đựng xung đột vô hình giữa nghĩa – lễ – danh – thân.</description>
+    </item>
+  </channel>
+</rss>
