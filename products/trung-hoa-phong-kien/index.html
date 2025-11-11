@@ -163,7 +163,7 @@ let selected = null;
 
 
 function openPopup(cls){
-  document.getElementById("popup-img").src = "\/relive-shop-c\/" + (cls.image || "");
+  document.getElementById("popup-img").src = cls.image || "";
   document.getElementById("popup-name").textContent = cls.name;
   document.getElementById("popup-description").textContent = cls.description || "";
 
@@ -188,7 +188,7 @@ function renderClasses(){
     const card = document.createElement("div");
     card.className = "class-card";
     card.innerHTML = `
-      <img src="\/relive-shop-c\/${cls.image || ""}" class="class-thumb" />
+      <img src="${cls.image || ""}" class="class-thumb" />
       <div class="text-lg font-semibold">${cls.name}</div>
       <div class="text-sm text-slate-400">${cls.description || ""}</div>
       <div class="text-sm font-mono text-cyan-400 mt-1">${Number(cls.price||0).toLocaleString("vi-VN")}đ</div>
