@@ -11,6 +11,8 @@ function setCart(items) {
 
 function addToCart(item) {
   const cart = getCart();
+  item.image = item.image.replace(/^\//, "");
+  item.image = "{{ .Site.BaseURL }}" + item.iamge;
   cart.push({ ...item, qty: 1, addedAt: Date.now() });
   setCart(cart);
   alert("Đã thêm vào giỏ hàng!");
