@@ -144,7 +144,7 @@ const BASE = "\/relive-shop-c\/";
 function fix(p) {
   if (!p) return "";
   
-  return BASE + p.replace(/^\//, "");
+  return (p.startsWith("http")) ?p : BASE +p.replace(/^\//, "");
 }
 
 function getCart(){ return JSON.parse(localStorage.getItem("cart") || "[]"); }

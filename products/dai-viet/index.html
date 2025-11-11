@@ -217,7 +217,7 @@ document.getElementById("btn-add").onclick = () => {
     sku: 'dai-viet',
     name: 'Đại Việt hưng thịnh',
     price: Number(selected.price || 0),
-    image: '\/images\/dai-viet.jpeg',
+    image: selected.image || '\/images\/dai-viet.jpeg',
     options: { "Lớp nhân vật": selected.name }
   });
 };

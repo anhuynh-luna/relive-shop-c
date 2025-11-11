@@ -217,7 +217,7 @@ document.getElementById("btn-add").onclick = () => {
     sku: 'anh-may-hoi-nuoc',
     name: 'Anh thời kỳ Máy Hơi Nước',
     price: Number(selected.price || 0),
-    image: '\/images\/anh-may-hoi-nuoc.jpeg',
+    image: selected.image || '\/images\/anh-may-hoi-nuoc.jpeg',
     options: { "Lớp nhân vật": selected.name }
   });
 };

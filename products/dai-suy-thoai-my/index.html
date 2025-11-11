@@ -231,7 +231,7 @@ document.getElementById("btn-add").onclick = () => {
     sku: 'dai-suy-thoai-my',
     name: 'Hoa Kỳ thời Đại Suy Thoái 1929',
     price: Number(selected.price || 0),
-    image: '\/images\/hoa-ky-1929.jpeg',
+    image: selected.image || '\/images\/hoa-ky-1929.jpeg',
     options: { "Lớp nhân vật": selected.name }
   });
 };

@@ -221,7 +221,7 @@ document.getElementById("btn-add").onclick = () => {
     sku: 'phuc-hung',
     name: 'Châu Âu thời Phục Hưng',
     price: Number(selected.price || 0),
-    image: '\/images\/chau-au-phuc-hung.jpeg',
+    image: selected.image || '\/images\/chau-au-phuc-hung.jpeg',
     options: { "Lớp nhân vật": selected.name }
   });
 };

@@ -216,7 +216,7 @@ document.getElementById("btn-add").onclick = () => {
     sku: 'trung-hoa-phong-kien',
     name: 'Trung Hoa Phong Kiến',
     price: Number(selected.price || 0),
-    image: '\/images\/trung-hoa-phong-kien.jpeg',
+    image: selected.image || '\/images\/trung-hoa-phong-kien.jpeg',
     options: { "Lớp nhân vật": selected.name }
   });
 };

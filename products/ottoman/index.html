@@ -219,7 +219,7 @@ document.getElementById("btn-add").onclick = () => {
     sku: 'ottoman',
     name: 'Đế quốc Ottoman thời kỳ hoàng kim',
     price: Number(selected.price || 0),
-    image: '\/images\/ottoman.jpeg',
+    image: selected.image || '\/images\/ottoman.jpeg',
     options: { "Lớp nhân vật": selected.name }
   });
 };

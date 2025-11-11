@@ -221,7 +221,7 @@ document.getElementById("btn-add").onclick = () => {
     sku: 'an-do-giao',
     name: 'Xã hội Ấn Độ giáo cổ đại',
     price: Number(selected.price || 0),
-    image: '\/images\/an-do.jpeg',
+    image: selected.image || '\/images\/an-do.jpeg',
     options: { "Lớp nhân vật": selected.name }
   });
 };
