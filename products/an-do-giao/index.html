@@ -105,7 +105,7 @@
   <div class="grid md:grid-cols-2 gap-6">
       <div>
           
-          <img src="../../images/an-do.jpeg" class="rounded-lg border border-slate-800"/>
+          <img src="images/an-do.jpeg" class="rounded-lg border border-slate-800"/>
           
       </div>
 
@@ -161,7 +161,7 @@ Và nếu bạn tìm thấy cánh cửa để bước ra khỏi định mệnh�
 </div>
 
 <script>
-const CLASSES = [{"description":"Giữ kinh Veda, hành thiền, thực hiện nghi lễ và bảo toàn tri thức tâm linh.","image":"/images/classes/tu-si.jpeg","name":"Tu sĩ (Brahmin)","price":800000,"skills":["Thiền định","Trì giới","Tụng niệm","Triết học tôn giáo"]},{"description":"Lãnh đạo quân đội, bảo vệ xã hội và duy trì trật tự.","image":"/images/classes/chien-binh.jpeg","name":"Chiến binh (Kshatriya)","price":750000,"skills":["Chỉ huy","Ngoại giao","Tổ chức quyền lực"]},{"description":"Tạo của cải vật chất và duy trì kinh tế cộng đồng.","image":"/images/classes/thuong-nhan-an-do.jpeg","name":"Thương nhân (Vaishya)","price":700000,"skills":["Giao thương","Quản lý tài sản","Nông nghiệp"]},{"description":"Lao động chân tay, chịu ảnh hưởng sâu sắc của bất bình đẳng xã hội.","image":"/images/classes/lao-dong-phuc-dich.jpeg","name":"Lao động phục dịch (Shudra)","price":500000,"skills":["Thích nghi","Sức bền","Lao động đa năng"]}];
+const CLASSES = [{"description":"Giữ kinh Veda, hành thiền, thực hiện nghi lễ và bảo toàn tri thức tâm linh.","image":"images/classes/tu-si.jpeg","name":"Tu sĩ (Brahmin)","price":800000,"skills":["Thiền định","Trì giới","Tụng niệm","Triết học tôn giáo"]},{"description":"Lãnh đạo quân đội, bảo vệ xã hội và duy trì trật tự.","image":"images/classes/chien-binh.jpeg","name":"Chiến binh (Kshatriya)","price":750000,"skills":["Chỉ huy","Ngoại giao","Tổ chức quyền lực"]},{"description":"Tạo của cải vật chất và duy trì kinh tế cộng đồng.","image":"images/classes/thuong-nhan-an-do.jpeg","name":"Thương nhân (Vaishya)","price":700000,"skills":["Giao thương","Quản lý tài sản","Nông nghiệp"]},{"description":"Lao động chân tay, chịu ảnh hưởng sâu sắc của bất bình đẳng xã hội.","image":"images/classes/lao-dong-phuc-dich.jpeg","name":"Lao động phục dịch (Shudra)","price":500000,"skills":["Thích nghi","Sức bền","Lao động đa năng"]}];
 const priceDisplay = document.getElementById("price-display");
 const classList = document.getElementById("class-list");
 let selected = null;
@@ -221,7 +221,7 @@ document.getElementById("btn-add").onclick = () => {
     sku: 'an-do-giao',
     name: 'Xã hội Ấn Độ giáo cổ đại',
     price: Number(selected.price || 0),
-    image: '\/images\/an-do.jpeg',
+    image: 'images\/an-do.jpeg',
     options: { "Lớp nhân vật": selected.name }
   });
 };
