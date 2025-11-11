@@ -166,8 +166,17 @@ const classList = document.getElementById("class-list");
 let selected = null;
 
 
+const BASE = "\/relive-shop-c\/".replace(/\/+$/,"/");
+const toUrl = (p) => {
+  if (!p) return "";
+  if (/^https?:\/\//i.test(p)) return p;  
+  
+  return new URL(p.replace(/^\/+/,""), BASE).toString();
+}
+
+
 function openPopup(cls){
-  document.getElementById("popup-img").src = cls.image || "";
+  document.getElementById("popup-img").src = toUrl(cls.image || "");
   document.getElementById("popup-name").textContent = cls.name;
   document.getElementById("popup-description").textContent = cls.description || "";
 
@@ -192,7 +201,7 @@ function renderClasses(){
     const card = document.createElement("div");
     card.className = "class-card";
     card.innerHTML = `
-      <img src="${cls.image || ""}" class="class-thumb" />
+      <img src="${toUrl(cls.image || "")}" class="class-thumb" />
       <div class="text-lg font-semibold">${cls.name}</div>
       <div class="text-sm text-slate-400">${cls.description || ""}</div>
       <div class="text-sm font-mono text-cyan-400 mt-1">${Number(cls.price||0).toLocaleString("vi-VN")}đ</div>
@@ -220,7 +229,7 @@ document.getElementById("btn-add").onclick = () => {
     sku: 'ba-tu-safavid',
     name: 'Ba Tư thời Safavid',
     price: Number(selected.price || 0),
-    image: '\/images\/ba-tu-safavid.jpeg',
+    image: toUrl('\/images\/ba-tu-safavid.jpeg'),
     options: { "Lớp nhân vật": selected.name }
   });
 };
