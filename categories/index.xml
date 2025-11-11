@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ReLive Experiences</title>
-    <link>/relive-shop-c/categories/</link>
+    <link>https://anhuynh-luna.github.io/relive-shop-c/categories/</link>
     <description>Recent content in Categories on ReLive Experiences</description>
     <generator>Hugo</generator>
     <language>vi</language>
-    <atom:link href="/relive-shop-c/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://anhuynh-luna.github.io/relive-shop-c/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
