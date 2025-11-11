@@ -188,7 +188,7 @@ function renderClasses(){
     const card = document.createElement("div");
     card.className = "class-card";
     card.innerHTML = `
-      <img src="\/Users\/huynhtuongan\/relive-shop\/content\/products\/trung-hoa-phong-kien.md" class="class-thumb" alt="${cls.name} character class with ${cls.description || 'special abilities'}">
+      <img src="\/Users\/huynhtuongan\/relive-shop\/content\/products\/trung-hoa-phong-kien.md" class="rounded-lg mb-3 border border-slate-800 w-full h-48 object-cover" />
       <div class="text-lg font-semibold">${cls.name}</div>
       <div class="text-sm text-slate-400">${cls.description || ""}</div>
       <div class="text-sm font-mono text-cyan-400 mt-1">${Number(cls.price||0).toLocaleString("vi-VN")}đ</div>
