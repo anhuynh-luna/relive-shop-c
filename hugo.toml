@@ -1,4 +1,4 @@
-baseURL = "/relive-shop-c/"
+baseURL = "/"
 languageCode = "vi"
 title = "ReLive Experiences"
 enableRobotsTXT = true
