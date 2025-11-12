@@ -140,11 +140,11 @@
 </style>
 
 <script>
+
 const BASE = "\/relive-shop-c\/";
 function fix(p) {
   if (!p) return "";
-  
-  return (p.startsWith("http")) ?p : BASE +p.replace(/^\//, "");
+  return p.startsWith("http") ? p : BASE + p.replace(/^\//, "");
 }
 
 function getCart(){ return JSON.parse(localStorage.getItem("cart") || "[]"); }
@@ -194,7 +194,6 @@ function renderCart(){
 function removeItem(idx){
   if(getVoucher().amount > 0){ alert("❗ Không thể xóa sản phẩm khi ưu đãi đang áp dụng."); return; }
   const cart = getCart();
-  cart.forEach(i => i.image = fix(i.image)); 
   cart.splice(idx,1);
   saveCart(cart);
   renderCart();
