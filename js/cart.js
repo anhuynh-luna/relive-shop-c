@@ -1,5 +1,13 @@
 const CART_KEY = "relive_cart_v1";
 
+// Cần phải định nghĩa BASE và hàm fix() trong cart.js để sử dụng nó.
+// Giả định .Site.BaseURL được thay thế (template Hugo)
+const BASE = "/* BASE_URL_PLACEHOLDER */"; 
+function fix(p) {
+  if (!p) return "";
+  return p.startsWith("http") ? p : BASE + p.replace(/^\//, "");
+}
+
 
 function getCart() {
   try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
@@ -20,12 +28,19 @@ function addToCart(item) {
 function removeFromCart(index) {
   const cart = getCart();
   cart.splice(index, 1);
+  // Thay vì gọi renderCartPage() ở đây, chúng ta sẽ dựa vào hàm renderCart() của list.html
+  // nếu list.html được load sau. Để an toàn, chúng ta gọi cả hai.
+  // Tuy nhiên, vì mục tiêu là fix list.html, ta chỉ cần gọi setCart.
   setCart(cart);
+  // Cần gọi renderCartPage() trong môi trường list.html nếu không muốn xóa hàm trong đó.
+  // Hoặc chỉ cần gọi renderCart() nếu list.html có thể truy cập được.
+  // Tạm thời để nguyên logic cũ, tập trung vào fix ảnh.
   renderCartPage();
 }
 
 function clearCart() {
   setCart([]);
+  // Cần gọi renderCartPage() trong môi trường list.html nếu không muốn xóa hàm trong đó.
   renderCartPage();
 }
 
@@ -66,7 +81,7 @@ function renderCartPage() {
     const opts = it.options ? Object.entries(it.options).filter(([k,v]) => v) : [];
     return `
       <div class="flex gap-4 items-center border border-slate-800 rounded-xl p-3">
-        ${it.image ? `<img src="${it.image}" class="w-20 h-20 object-cover rounded">` : ""}
+        ${it.image ? `<img src="${fix(it.image)}" class="w-20 h-20 object-cover rounded">` : ""} 
         <div class="flex-1">
           <div class="font-semibold">${it.name}</div>
           <div class="text-sm text-slate-300">Mã: ${it.sku || "N/A"}</div>
@@ -90,5 +105,8 @@ function fakeCheckout() {
 
 document.addEventListener("DOMContentLoaded", () => {
   renderCartBadge();
-  renderCartPage();
+  // list.html có gọi renderCart() riêng, nên ta có thể bỏ qua renderCartPage() ở đây 
+  // HOẶC chỉ cần đảm bảo renderCartPage() đã được fix như trên.
+  // Tạm thời giữ nguyên để list.html có thể load giỏ hàng khi script được load.
+  renderCartPage(); 
 });
