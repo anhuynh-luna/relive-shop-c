@@ -1,10 +1,5 @@
 const CART_KEY = "cart";
 
-const BASE = "{{ .Site.BaseURL }}";
-function fix(p) {
-  if (!p) return "";
-  return p.startsWith("http") ? p : BASE + p.replace(/^\//, "");
-}
 
 function getCart() {
   try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
@@ -71,7 +66,7 @@ function renderCartPage() {
     const opts = it.options ? Object.entries(it.options).filter(([k,v]) => v) : [];
     return `
       <div class="flex gap-4 items-center border border-slate-800 rounded-xl p-3">
-        ${it.image ? `<img src="${fix(it.image)}" class="w-20 h-20 object-cover rounded">` : ""}
+        ${it.image ? `<img src="${it.image}" class="w-20 h-20 object-cover rounded">` : ""}
         <div class="flex-1">
           <div class="font-semibold">${it.name}</div>
           <div class="text-sm text-slate-300">Mã: ${it.sku || "N/A"}</div>
