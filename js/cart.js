@@ -1,4 +1,4 @@
-const CART_KEY = "cart";
+const CART_KEY = "relive_cart_v1";
 
 
 function getCart() {
