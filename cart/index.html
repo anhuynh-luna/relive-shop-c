@@ -41,10 +41,7 @@
   <div id="cart-items" class="space-y-4"></div>
 
   <div class="mt-6 p-4 border border-slate-700 rounded-xl">
-    <div class="flex justify-between text-slate-300">
-      <span>Tạm tính:</span>
-      <span id="cart-subtotal" class="font-mono"></span>
-    </div>
+    
 
     <div id="voucher-row" class="flex justify-between text-cyan-300 mt-1 hidden">
       <span>Giảm giá:</span>
@@ -169,7 +166,7 @@ function renderCart(){
     itemsDiv.innerHTML += `
       <div class="flex items-center justify-between border-b border-slate-700 py-2">
         <div class="flex gap-3">
-          <img src="${fix(item.image)}" class="w-20 h-20 object-cover rounded border border-slate-700" />
+          <img src="${item.image}" class="w-20 h-20 object-cover rounded border border-slate-700" />
           <div>
             <div class="font-semibold text-white">${item.name}</div>
             <div class="text-xs text-slate-400">Lớp: ${item.options?.["Lớp nhân vật"]}</div>

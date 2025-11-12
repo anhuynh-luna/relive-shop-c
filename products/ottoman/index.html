@@ -164,6 +164,12 @@ const priceDisplay = document.getElementById("price-display");
 const classList = document.getElementById("class-list");
 let selected = null;
 
+const BASE = "\/relive-shop-c\/";
+function fix(p) {
+  if (!p) return "";
+  return p.startsWith("http") ? p : BASE + p.replace(/^\//, "");
+}
+
 
 function openPopup(cls){
   document.getElementById("popup-img").src = "\/relive-shop-c\/" + (cls.image || "");
@@ -219,7 +225,7 @@ document.getElementById("btn-add").onclick = () => {
     sku: 'ottoman',
     name: 'Đế quốc Ottoman thời kỳ hoàng kim',
     price: Number(selected.price || 0),
-    image: selected.image || '\/images\/ottoman.jpeg',
+    image: fix(selected.image || '\/images\/ottoman.jpeg'),
     options: { "Lớp nhân vật": selected.name }
   });
 };
