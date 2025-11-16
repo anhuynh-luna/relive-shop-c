@@ -29,7 +29,12 @@
         
         <div id="auth-area" class="ml-2 flex items-center gap-3">
           
-          <a id="login-link" href="../relive-shop-c/login/" class="px-3 py-1 bg-cyan-500 text-black rounded hover:bg-cyan-400">Đăng nhập</a>
+          <a id="login-link"
+              href="../relive-shop-c/login/"
+              onclick="localStorage.setItem('reliveReturnTo',window.location.href)"
+              class="px-3 py-1 bg-cyan-500 text-black rounded hover:bg-cyan-400">
+              Đăng nhập
+          </a>
         </div>
       </nav>
     </div>
@@ -404,6 +409,7 @@ renderCart();
         
         const a = document.createElement("a");
         a.href = "\/relive-shop-c\/login/";
+        a.onclick = () => localStorage.setItem("reliveReturnTo", window.location.href);
         a.id = "login-link-js";
         a.className = "px-3 py-1 bg-cyan-500 text-black rounded hover:bg-cyan-400";
         a.textContent = "Đăng nhập";
