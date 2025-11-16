@@ -1,0 +1,90 @@
+<div class="max-w-md mx-auto mt-10 bg-slate-900 p-6 rounded-xl border border-slate-700 shadow-lg">
+
+  <h1 class="text-2xl font-semibold text-center text-cyan-300 mb-6">
+    Đăng nhập tài khoản
+  </h1>
+
+  
+  <label class="block mb-2 text-sm text-slate-300">Tên người dùng</label>
+  <input id="login-username"
+         type="text"
+         placeholder="vd: nguyenvana"
+         class="w-full p-2 mb-4 bg-slate-800 rounded border border-slate-600 text-white" />
+
+  
+  <label class="block mb-2 text-sm text-slate-300">Số điện thoại</label>
+  <input id="login-phone"
+         type="text"
+         placeholder="vd: 0987654321"
+         class="w-full p-2 mb-4 bg-slate-800 rounded border border-slate-600 text-white" />
+
+  
+  <label class="block mb-2 text-sm text-slate-300">Mã OTP</label>
+  <div class="flex gap-2">
+    <input id="login-otp"
+           type="text"
+           placeholder="Nhập mã…"
+           class="flex-1 p-2 bg-slate-800 rounded border border-slate-600 text-white" />
+    <button onclick="sendOtp()"
+            class="px-3 py-2 bg-cyan-500 text-black rounded hover:bg-cyan-400">
+      Gửi mã
+    </button>
+  </div>
+
+  <div id="otp-info" class="text-xs text-cyan-400 mt-2 hidden">
+    OTP đã gửi! (Mã demo: <span id="otp-code"></span>)
+  </div>
+
+  
+  <div id="login-error" class="text-red-400 text-center text-sm hidden mt-4">
+    Vui lòng nhập đủ thông tin.
+  </div>
+
+  
+  <button onclick="submitLogin()"
+          class="w-full mt-6 py-2 bg-green-500 hover:bg-green-400 text-black rounded-lg font-semibold">
+    Đăng nhập →
+  </button>
+</div>
+
+
+<script>
+
+function sendOtp() {
+  const otp = Math.floor(1000 + Math.random() * 9000);
+  localStorage.setItem("reliveOTP", otp);
+
+  document.getElementById("otp-code").innerText = otp;
+  document.getElementById("otp-info").classList.remove("hidden");
+
+  alert("Mã OTP demo của bạn là: " + otp);
+}
+
+function submitLogin() {
+  const username = document.getElementById("login-username").value.trim();
+  const phone = document.getElementById("login-phone").value.trim();
+  const otp = document.getElementById("login-otp").value.trim();
+  const realOtp = localStorage.getItem("reliveOTP");
+
+  
+  if (!username || !phone || !otp || otp !== realOtp) {
+    document.getElementById("login-error").classList.remove("hidden");
+    setTimeout(() => {
+      document.getElementById("login-error").classList.add("hidden");
+    }, 2000);
+    return;
+  }
+
+  
+  const user = { username, phone };
+  localStorage.setItem("reliveUser", JSON.stringify(user));
+
+  
+  localStorage.removeItem("reliveOTP");
+
+  alert("🎉 Đăng nhập thành công!");
+
+  
+  window.location.href = "/";
+}
+</script>
