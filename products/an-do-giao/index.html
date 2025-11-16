@@ -31,7 +31,15 @@
           
           <a id="login-link"
               href="../../relive-shop-c/login/"
-              onclick="localStorage.setItem('reliveReturnTo',window.location.href)"
+              onclick="
+                const BASE='\/relive-shop-c\/';
+                const here=window.location.href;
+                const path=window.location.pathname.replace(/^\//,'');
+                localStorage.setItem('reliveReturnTo', 
+                    here.startsWith(BASE) ? here : BASE+path
+                );
+              "
+
               class="px-3 py-1 bg-cyan-500 text-black rounded hover:bg-cyan-400">
               Đăng nhập
           </a>
@@ -359,7 +367,21 @@ renderClasses();
         
         const a = document.createElement("a");
         a.href = "\/relive-shop-c\/login/";
-        a.onclick = () => localStorage.setItem("reliveReturnTo", window.location.href);
+        a.onclick = () => {
+          const BASE = "\/relive-shop-c\/";
+          const here = window.location.href;
+
+        
+        if (here.startsWith(BASE)) {
+          localStorage.setItem("reliveReturnTo", here);
+        }
+        
+        else {
+          const path = window.location.pathname.replace(/^\//, "");
+          localStorage.setItem("reliveReturnTo", BASE + path);
+        }
+      };
+
         a.id = "login-link-js";
         a.className = "px-3 py-1 bg-cyan-500 text-black rounded hover:bg-cyan-400";
         a.textContent = "Đăng nhập";

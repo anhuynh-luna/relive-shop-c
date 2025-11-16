@@ -84,7 +84,36 @@ function submitLogin() {
 
   alert("🎉 Đăng nhập thành công!");
 
-  window.location.href = "https://anhuynh-luna.github.io/relive-shop-c/";
+  const BASE = "\/relive-shop-c\/";   
+
+  let returnTo = localStorage.getItem("reliveReturnTo");
+  localStorage.removeItem("reliveReturnTo");
+
+  
+  if (!returnTo) {
+    window.location.href = BASE;
+  } else {
+
+    try {
+      const url = new URL(returnTo);
+
+      
+      if (!url.href.startsWith(BASE)) {
+        
+        const fixed = BASE + url.pathname.replace(/^\//, "");
+        window.location.href = fixed;
+      } else {
+        
+        window.location.href = url.href;
+      }
+
+    } catch(e) {
+      
+      window.location.href = BASE;
+    }
+
+  }
+
 
 }
 </script>
