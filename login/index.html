@@ -65,40 +65,29 @@
 
       
       <div>
-        <label class="block text-sm text-slate-300 mb-1">
-          Tên người dùng
-        </label>
-        <input id="login-username"
-               type="text"
-               placeholder="vd: nguyenvana"
+        <label class="block text-sm text-slate-300 mb-1">Tên người dùng</label>
+        <input id="login-username" type="text" placeholder="vd: nguyenvana"
                class="w-full p-3 rounded-lg bg-slate-800 border border-slate-600 text-white
                       focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none transition">
       </div>
 
       
       <div>
-        <label class="block text-sm text-slate-300 mb-1">
-          Số điện thoại
-        </label>
-        <input id="login-phone"
-               type="text"
-               placeholder="vd: 0987654321"
+        <label class="block text-sm text-slate-300 mb-1">Số điện thoại</label>
+        <input id="login-phone" type="text" placeholder="vd: 0987654321"
                class="w-full p-3 rounded-lg bg-slate-800 border border-slate-600 text-white
                       focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none transition">
       </div>
 
       
       <div>
-        <label class="block text-sm text-slate-300 mb-1">
-          Mã OTP
-        </label>
+        <label class="block text-sm text-slate-300 mb-1">Mã OTP</label>
 
         <div class="flex gap-2">
-          <input id="login-otp"
-                 type="text"
-                 placeholder="Nhập mã OTP..."
+          <input id="login-otp" type="text" placeholder="Nhập mã OTP..."
                  class="flex-1 p-3 rounded-lg bg-slate-800 border border-slate-600 text-white
                         focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none transition">
+
           <button onclick="sendOtp()"
                   class="px-4 py-3 bg-cyan-500 text-black rounded-lg font-semibold
                          hover:bg-cyan-400 transition">
@@ -106,16 +95,14 @@
           </button>
         </div>
 
-        
         <div id="otp-info" class="text-xs text-cyan-400 mt-2 hidden">
           OTP đã được gửi!
         </div>
       </div>
 
       
-      <div id="login-error"
-           class="text-red-400 text-center text-sm hidden">
-        Vui lòng nhập đúng thông tin.
+      <div id="login-error" class="text-red-400 text-center text-sm hidden">
+        Thông tin đăng nhập chưa đúng. Kiểm tra lại nhé!
       </div>
 
     </div>
@@ -139,11 +126,14 @@ function sendOtp() {
   localStorage.setItem("reliveOTP", otp);
 
   
-  document.getElementById("otp-code").innerText = otp;
-  document.getElementById("otp-info").classList.remove("hidden");
+  const info = document.getElementById("otp-info");
+  info.textContent = "OTP đã được gửi!";
+  info.classList.remove("hidden");
 
-  alert("Mã OTP demo của bạn là: " + otp);
+  alert("Mã OTP của bạn là: " + otp);
 }
+
+
 
 function submitLogin() {
   const username = document.getElementById("login-username").value.trim();
@@ -151,19 +141,15 @@ function submitLogin() {
   const otp = document.getElementById("login-otp").value.trim();
   const realOtp = localStorage.getItem("reliveOTP");
 
-  
   if (!username || !phone || !otp || otp !== realOtp) {
-    document.getElementById("login-error").classList.remove("hidden");
-    setTimeout(() => {
-      document.getElementById("login-error").classList.add("hidden");
-    }, 2000);
+    const err = document.getElementById("login-error");
+    err.classList.remove("hidden");
+    setTimeout(() => err.classList.add("hidden"), 2000);
     return;
   }
 
   
-  const user = { username, phone };
-  localStorage.setItem("reliveUser", JSON.stringify(user));
-
+  localStorage.setItem("reliveUser", JSON.stringify({ username }));
   localStorage.removeItem("reliveOTP");
 
   alert("🎉 Đăng nhập thành công!");
